@@ -13,54 +13,9 @@ body {
   background-color: #fafafa;
 }
 
-/* ======== HEADER ======== */
-header {
-  background-color: #324458;  /*color base*/
-  color: white;
-  padding: 15px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-header h1 {
-  font-family: "Bebas Neue", sans-serif;  /*Fuente titulo*/
-  font-size: 1.7rem;
-  margin-bottom: 10px;
-}
 
 
-.Icon-titulo{
-  justify-content: center;
-  width: 6%;
-  height: 7%;
-}
 
-.botones-inicio {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-
-}
-
-.botones-inicio button {
-  background: #324458;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: background 0.3s ease;
-  font-family: "Bebas Neue", sans-serif;
-
-}
-
-button:hover {
-  background: #2c3b4d;
-}
 
 /* ======== CONTENIDO PRINCIPAL ======== */
 main {

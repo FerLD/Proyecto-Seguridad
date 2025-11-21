@@ -1,3 +1,6 @@
+import React from 'react';
+import "../assets/css/Header.css";
+
 export default function Header() {
     return (
         <header>
