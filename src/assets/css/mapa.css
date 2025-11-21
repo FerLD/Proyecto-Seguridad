@@ -1,0 +1,21 @@
+.mapa-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mapa {
+    width: 70%;
+    cursor: pointer;
+}
+
+.mapa path {
+    fill: #cccccc;
+    stroke: #333;
+    stroke-width: 2;
+    transition: 0.2s;
+}
+
+.mapa path:hover {
+    fill: #ffcc00;
+}
