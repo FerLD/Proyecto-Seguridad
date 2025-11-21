@@ -1,6 +1,6 @@
-/* ======== HEADER ======== */
+/* ======== HEADER (PC igual) ======== */
 header {
-  background-color: #324458;  /*color base*/
+  background-color: #324458;
   color: white;
   padding: 15px 25px;
   display: flex;
@@ -10,8 +10,8 @@ header {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-header h1 {
-  font-family: "Bebas Neue", sans-serif;  /*Fuente titulo*/
+.titulo{
+  font-family: "Bebas Neue", sans-serif;
   font-size: 1.7rem;
   margin-bottom: 10px;
 }
@@ -22,10 +22,8 @@ header h1 {
 }
 
 /* ======== BOTONES ======== */
-
 .botones-inicio {
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -47,36 +45,39 @@ button:hover {
 
 
 /* =====================================================
-   ======== RESPONSIVE PARA TELÉFONOS (≤ 480px) ========
+   ======== RESPONSIVE (Pantallas pequeñas) ============
    ===================================================== */
-@media (max-width: 480px) {
-  
-  header {
-    flex-direction: column;        /* Todo en columna */
-    text-align: center;            /* Centrar texto e icono */
-    padding: 20px;
-    gap: 15px;
-  }
+@media (max-width: 768px) {
 
-  header h1 {
-    font-size: 1.4rem;             /* Ajustar tamaño del título */
-    margin: 0;
-  }
-
-  .Icon-titulo {
-    width: 45px;                   /* Icono más pequeño */
-    height: auto;
-  }
-
-  .botones-inicio {
-    flex-direction: column;        /* Botones uno debajo del otro */
-    width: 100%;
+header {
+    flex-direction: column;       /* Icono - Título - Botones */
+    justify-content: center;
     align-items: center;
-  }
+    text-align: center;
+    padding: 20px;
+    gap: 10px;
+}
 
-  .botones-inicio button {
-    width: 90%;                    /* Botones casi del ancho total */
+/* Centramos el div que contiene el icono */
+header > div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.Icon-titulo {
+    width: 110px;
+}
+
+.titulo {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+
+.botones-inicio button {
+    width: 90%;
     font-size: 1rem;
     padding: 10px;
-  }
+    }
 }
