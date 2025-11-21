@@ -1,7 +1,7 @@
 export default function Header() {
     return (
         <header>
-            <img src="/src/assets/Images/Icon-peligro.png" className='Icon-titulo' alt="icono peligro" />
+            <img src="/Icon-peligro.png" className="Icon-titulo" alt="icono peligro" />
 
             <h1>SAVIG — Sistema de Análisis de Violencia en Guanajuato</h1>
 
