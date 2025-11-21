@@ -1,6 +1,3 @@
-
-
-
 /* ======== HEADER ======== */
 header {
   background-color: #324458;  /*color base*/
@@ -19,20 +16,17 @@ header h1 {
   margin-bottom: 10px;
 }
 
-
-.Icon-titulo{
-  justify-content: center;
-  width: 6%;
-  height: 7%;
+.Icon-titulo {
+  width: 60px;
+  height: auto;
 }
 
-
+/* ======== BOTONES ======== */
 
 .botones-inicio {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-
 }
 
 .botones-inicio button {
@@ -45,9 +39,44 @@ header h1 {
   font-size: 1.2rem;
   transition: background 0.3s ease;
   font-family: "Bebas Neue", sans-serif;
-
 }
 
 button:hover {
   background: #2c3b4d;
+}
+
+
+/* =====================================================
+   ======== RESPONSIVE PARA TELÉFONOS (≤ 480px) ========
+   ===================================================== */
+@media (max-width: 480px) {
+  
+  header {
+    flex-direction: column;        /* Todo en columna */
+    text-align: center;            /* Centrar texto e icono */
+    padding: 20px;
+    gap: 15px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;             /* Ajustar tamaño del título */
+    margin: 0;
+  }
+
+  .Icon-titulo {
+    width: 45px;                   /* Icono más pequeño */
+    height: auto;
+  }
+
+  .botones-inicio {
+    flex-direction: column;        /* Botones uno debajo del otro */
+    width: 100%;
+    align-items: center;
+  }
+
+  .botones-inicio button {
+    width: 90%;                    /* Botones casi del ancho total */
+    font-size: 1rem;
+    padding: 10px;
+  }
 }
