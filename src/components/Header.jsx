@@ -1,7 +1,11 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import "../assets/css/Header.css";
 
 export default function Header() {
+
+    const navigate = useNavigate();
+
     return (
         <header>
             <div>
@@ -11,8 +15,8 @@ export default function Header() {
             <h1 className='titulo'>SAVIG — Sistema de Análisis de Violencia en Guanajuato</h1>
 
             <nav className='botones-inicio'>
-                <button>Inicio</button>
-                <button>Acerca</button>
+                <button onClick={() => navigate("/")}>Inicio</button>
+                <button onClick={() => navigate("/nosotros")}>Acerca</button>
             </nav>
         </header>
     );

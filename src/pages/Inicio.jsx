@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import Header from "../components/Header";
 import Buscador from "../components/Buscador";
@@ -12,11 +12,13 @@ export default function Inicio() {
     const [resultados, setResultados] = useState(null);
     const [municipioBuscado, setMunicipioBuscado] = useState("");
 
+    // 👇 Aquí guardaremos la referencia a la sección de resultados
+    const resultadosRef = useRef(null);
+
     // Función que se ejecuta cuando se busca un municipio
     const buscar = (query) => {
-        setMunicipioBuscado(query); // Guardar municipio
+        setMunicipioBuscado(query);
 
-        // Datos ficticios
         const datos = {
             "Reportes ciudadanos": Math.floor(Math.random() * 100),
             "Análisis estadístico": {
@@ -36,12 +38,17 @@ export default function Inicio() {
         };
 
         setResultados(datos);
+
+        // 👇 Scroll automático hacia los resultados
+        setTimeout(() => {
+            if (resultadosRef.current) {
+                resultadosRef.current.scrollIntoView({ behavior: "smooth" });
+            }
+        }, 200);
     };
 
     return (
         <section className="inicio-container">
-            <Header />
-
             <main>
                 <section className="Filtros">
                     <h2>Zonas</h2>
@@ -59,19 +66,16 @@ export default function Inicio() {
             </main>
             
             {resultados && (
-                <section className="ResultadosBusqueda">
-
+                <section className="ResultadosBusqueda" ref={resultadosRef}>
                     <h3>
-                        Resultados para el municipio: <span className="municipio-destacado">{municipioBuscado}</span>
+                        Resultados para el municipio:{" "}
+                        <span className="municipio-destacado">{municipioBuscado}</span>
                     </h3>
 
                     <div className="tarjetas">
-
-                        {/* Reportes ciudadanos */}
                         <div className="tarjeta reportes">
                             <h4>Reportes ciudadanos</h4>
                             <p>{resultados["Reportes ciudadanos"]} reportes</p>
-
                             <div className="barra">
                                 <div
                                     className="barra-llenada"
@@ -80,21 +84,17 @@ export default function Inicio() {
                             </div>
                         </div>
 
-                        {/* Análisis estadístico */}
                         <div className="tarjeta analisis">
                             <h4>Análisis estadístico</h4>
                             <p>Promedio: {resultados["Análisis estadístico"].promedio}</p>
                             <p>Desviación estándar: {resultados["Análisis estadístico"].desviacion}</p>
                         </div>
 
-                        {/* Indicadores de riesgo */}
                         <div className="tarjeta indicadores">
                             <h4>Indicadores de riesgo</h4>
-
                             {Object.entries(resultados["Indicadores de riesgo"]).map(([nivel, valor], idx) => (
                                 <div key={idx} className="barra-nivel">
                                     <span>{nivel}</span>
-
                                     <div className="barra">
                                         <div
                                             className="barra-llenada"
@@ -105,21 +105,17 @@ export default function Inicio() {
                             ))}
                         </div>
 
-                        {/* Alertas por zona */}
                         <div className="tarjeta alertas">
                             <h4>Alertas por zona</h4>
-
                             {resultados["Alertas por zona"].map((zona, idx) => (
                                 <p key={idx} className="alerta">
                                     {zona.zona}: {zona.alertas} alertas
                                 </p>
                             ))}
                         </div>
-
                     </div>
                 </section>
             )}
         </section>
     );
 }
-

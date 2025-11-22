@@ -183,21 +183,6 @@ main > section {
   border-radius: 10px;
 }
 
-.btn-regresar {
-  background: none;
-  border: none;
-  color: #007bff;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.btn-regresar:hover {
-  text-decoration: underline;
-}
 
 
 

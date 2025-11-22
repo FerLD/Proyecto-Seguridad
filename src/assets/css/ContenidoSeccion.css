@@ -1,0 +1,125 @@
+/* ======== CONTENEDOR PRINCIPAL ======== */
+.info-expandida {
+    background: #ffffff;
+    padding: 25px 35px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    max-width: 900px;
+    margin: auto;
+    font-family: "Segoe UI", sans-serif;
+}
+
+
+.btn-regresar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #e9eef6;                  
+    color: #1a3b6e;                       
+    border: 2px solid #c8d4e3;           
+    padding: 8px 14px;
+    border-radius: 8px;                    
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.15s ease;
+}
+
+.btn-regresar i {
+    font-size: 1.1rem;
+}
+
+
+.btn-regresar:hover {
+    background: #dbe5f3;
+    border-color: #b5c4d7;
+    transform: translateX(-3px);      
+}
+
+.btn-regresar:active {
+    transform: translateX(-1px);
+}
+
+
+.secciones h2 {
+    font-size: 2rem;
+    color: #1e2e3e;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.secciones h5 {
+    margin-top: 18px;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    color: #1e2e3e;
+    font-weight: 600;
+}
+
+.secciones p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+.secciones p + h5 {
+    margin-top: 25px;
+}
+
+@media (max-width: 768px) {
+    .info-expandida {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .secciones h2 {
+        font-size: 1.7rem;
+        text-align: center;
+    }
+
+    .secciones h5 {
+        font-size: 1rem;
+    }
+
+    .secciones p {
+        font-size: 0.95rem;
+    }
+
+
+    .btn-regresar {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #e9eef6;                
+        color: #1a3b6e;                       
+        border: 2px solid #c8d4e3;             
+        padding: 8px 14px;
+        border-radius: 8px;                   
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+
+        transition: background 0.25s ease,
+                    border-color 0.25s ease,
+                    transform 0.15s ease;
+    }
+
+    .btn-regresar i {
+        font-size: 1.1rem;
+    }
+
+    .btn-regresar:hover {
+        background: #dbe5f3;
+        border-color: #b5c4d7;
+        transform: translateX(-3px);           
+    }
+
+    .btn-regresar:active {
+        transform: translateX(-1px);
+    }
+
+}
